@@ -29,16 +29,10 @@ function getHumanChoice() {
  let computerScore = 0;
 
 
- //Step 5: Logic for playing a single round
- 
+ //Step 5:
 
-
-
- 
- //Step 6: Logic to play the entire game
-function playGame() {
-  function playRound(humanChoice, computerChoice) {
-    //console.log(humanChoice = humanChoice.toLowerCase());
+function playRound(humanChoice, computerChoice) {
+    console.log(humanChoice = humanChoice.toLowerCase());
     if (humanChoice === "rock" && computerChoice ==="scissors"
     ) {
       console.log("You win! Rock beats scissors");
@@ -68,13 +62,28 @@ function playGame() {
       console.log("Try again");
     }
  }
-}
 
  const humanSelection = getHumanChoice();
  const computerSelection = getComputerChoice();
 
 
 //Testing for step 5
-playRound(humanSelection, computerSelection);
 console.log(humanScore);
 console.log(computerScore);
+
+//Step 6
+function playGame() {
+    const round = 5;
+    for(let i = 1; i < round; i++) {
+        playRound(getHumanChoice(), getComputerChoice());
+    }
+    if(humanScore > computerScore) {
+        console.log("You Win!!")
+    } else if(computerScore > humanScore) {
+        console.log("Computer Wins!!");
+    } else {
+        console.log("Draw!")
+    }
+}
+
+playGame();
